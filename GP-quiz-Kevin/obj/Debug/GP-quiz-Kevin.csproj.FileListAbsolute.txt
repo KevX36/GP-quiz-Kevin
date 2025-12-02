@@ -1,0 +1,8 @@
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\bin\Debug\GP-quiz-Kevin.exe.config
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\bin\Debug\GP-quiz-Kevin.exe
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\bin\Debug\GP-quiz-Kevin.pdb
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\obj\Debug\GP-quiz-Kevin.csproj.AssemblyReference.cache
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\obj\Debug\GP-quiz-Kevin.csproj.CoreCompileInputs.cache
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\obj\Debug\GP-quiz-Kevin.exe
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\obj\Debug\GP-quiz-Kevin.pdb
+C:\Kevin's unity projects\GP-quiz-Kevin\GP-quiz-Kevin\obj\Debug\GP-quiz-Kevin.exe.config
