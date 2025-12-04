@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,17 +22,18 @@ namespace GP_quiz_Kevin
         {
             //question 1
             questions.Add("if an int with a value of 4 is divided by 10 than multipled by 100 in 1 line of code what will it return as\n(I might have found the awnser making this)");
+            //this awnser has an esteregg so needs it to be question 1
             awnser1.Add("1: 40");
             awnser2.Add("2: 0");
             awnser3.Add("3: 400");
             awnser4.Add("4: 4");
             correctAwnser.Add(2);
             //question 2
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
+            questions.Add("what's the shorthand to add a number to an int?");
+            awnser1.Add("1: +=");
+            awnser2.Add("2: ++");
+            awnser3.Add("3: =+");
+            awnser4.Add("4: there isn't one");
             correctAwnser.Add(1);
             //question 3
             questions.Add("");
@@ -84,58 +86,103 @@ namespace GP_quiz_Kevin
             correctAwnser.Add(4);
             //question 10
             questions.Add("game math gave me a new nemesis, what is it:");
-            //this awnser has an esteregg that needs it to be question 10
+            //this awnser has an esteregg so needs it to be question 10
             awnser1.Add("1: home phone");
             awnser2.Add("2: ");
             awnser3.Add("3: rotations");
             awnser4.Add("4: changing individual vector3 values");
             correctAwnser.Add(3);
-
+            
 
             int questionTotal = questions.Count;
-            
-            
-            for (int i = 0; i < questionTotal; i++)
+            bool playing = true;
+
+            while (playing)
             {
+                Console.WriteLine("enter your name");
+                string name = Console.ReadLine();
+                //runs quiz
+                for (int i = 0; i < questionTotal; i++)
+                {
+                    Console.WriteLine($"{name}\tcurrent question: {i+1}/{questionTotal}");
+                    Console.WriteLine(questions[i]);
+                    Console.WriteLine(awnser1[i]);
+                    Console.WriteLine(awnser2[i]);
+                    Console.WriteLine(awnser3[i]);
+                    Console.WriteLine(awnser4[i]);
+
+                    awnser();
+                    Console.Clear();
+
+                }
+                // cheaks the score
+                for (int i = 0; i < questionTotal; i++)
+                {
+                    if (playerAwnser[i] == correctAwnser[i])
+                    {
+                        Score++;
+                        Console.WriteLine($"you got question {i + 1} correct");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"you got question {i + 1} wrong");
+                    }
+                    if (i == 0 && playerAwnser[i] == 1)
+                    {
+                        Console.WriteLine("that's what I thought too when I made this");
+                    }
+                    if (i == 9 && playerAwnser[i] == 1)
+                    {
+                        Console.WriteLine("no the house phone was my old nemesis");
+                    }
+
+                }
+
+                float finalScore = Score / questionTotal * 100;
+                Console.WriteLine($"your fianl score is {finalScore}%");
+                if (finalScore == 0)
+                {
+                    Console.WriteLine("wait a minite... you didn't get a single question right, HOW!\n Please tell me you did that intenionally");
+                }
+                if (finalScore == 100)
+                {
+                    Console.WriteLine("you got a perfect score, good job\nunless you just brute forced it but you wouldn't do that... right");
+                }
+                //cheak if the player wants to try again
+                Console.WriteLine("do you want to play again, Y/N");
+                bool Continue=true;
+                while (Continue)
+                {
+                    string con = Console.ReadLine();
+                    if (con == "Y")
+                    {
+
+                        Continue = false;
+                    }
+                    else if (con == "y")
+                    {
+
+                        Continue = false;
+                    }
+                    else if (con == "N")
+                    {
+                        playing = false;
+                        Continue = false;
+                    }
+                    else if (con == "n")
+                    {
+                        playing = false;
+                        Continue = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("that's not a valad awnser");
+                    }
+                }
                 
-                Console.WriteLine(questions[i]);
-                Console.WriteLine(awnser1[i]);
-                Console.WriteLine(awnser2[i]);
-                Console.WriteLine(awnser3[i]);
-                Console.WriteLine(awnser4[i]);
 
-                awnser();
-                Console.Clear();
 
-            }
 
-            for (int i = 0; i < questionTotal; i++)
-            {
-                if (playerAwnser[i] == correctAwnser[i])
-                {
-                    Score++;
-                    Console.WriteLine($"you got question {i+1} correct");
-                }
-                else
-                {
-                    Console.WriteLine($"you got question {i+1} wrong");
-                }
-                if (i == 9 && playerAwnser[i] == 1)
-                {
-                    Console.WriteLine("no the house phone was my old nemesis");
-                }
-                
-            }
-            
-            float finalScore = Score / questionTotal*100;
-            Console.WriteLine($"your fianl score is {finalScore}%");
-            if(finalScore == 0)
-            {
-                Console.WriteLine("wait a minite... you didn't get a single question right, HOW!\n Please tell me you did that intenionally");
-            }
-            if (finalScore == 100)
-            {
-                Console.WriteLine("you got a perfect score, good job\nunless you just brute forced it");
             }
 
 
