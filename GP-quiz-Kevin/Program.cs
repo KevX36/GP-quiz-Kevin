@@ -36,18 +36,18 @@ namespace GP_quiz_Kevin
             awnser4.Add("4: there isn't one");
             correctAwnser.Add(1);
             //question 3
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
+            questions.Add("why is the following line wrong \nif(string error = true){Console.wightline('this is wrong')}");
+            awnser1.Add("1: declaring string in the if statment");
+            awnser2.Add("2: using a string as a bool");
+            awnser3.Add("3: the wight line is enterd wrong");
+            awnser4.Add("4: all of the above");
             correctAwnser.Add(4);
             //question 4
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
+            questions.Add("what does == do?");
+            awnser1.Add("1: change a veriable to the same value");
+            awnser2.Add("2: cheak if the letters in a string match a number");
+            awnser3.Add("3: make an int the number of litters in a string");
+            awnser4.Add("4: cheak if the value is the same as another");
             correctAwnser.Add(4);
             //question 5
             questions.Add("in mario galaxy there is an thing that goes unused\nbut that every level calls on when loaded\nmaking the game crash if it's removed\n what was that item");
@@ -88,7 +88,7 @@ namespace GP_quiz_Kevin
             questions.Add("game math gave me a new nemesis, what is it:");
             //this awnser has an esteregg so needs it to be question 10
             awnser1.Add("1: home phone");
-            awnser2.Add("2: ");
+            awnser2.Add("2: Making this");
             awnser3.Add("3: rotations");
             awnser4.Add("4: changing individual vector3 values");
             correctAwnser.Add(3);
@@ -104,7 +104,7 @@ namespace GP_quiz_Kevin
                 //runs quiz
                 for (int i = 0; i < questionTotal; i++)
                 {
-                    Console.WriteLine($"{name}\tcurrent question: {i+1}/{questionTotal}");
+                    Console.WriteLine($"{name}\tcurrent question: {i+1}/{questionTotal}\tcurrent score: {Score / questionTotal * 100}%");
                     Console.WriteLine(questions[i]);
                     Console.WriteLine(awnser1[i]);
                     Console.WriteLine(awnser2[i]);
@@ -113,19 +113,14 @@ namespace GP_quiz_Kevin
 
                     awnser();
                     Console.Clear();
-
-                }
-                // cheaks the score
-                for (int i = 0; i < questionTotal; i++)
-                {
                     if (playerAwnser[i] == correctAwnser[i])
                     {
                         Score++;
-                        Console.WriteLine($"you got question {i + 1} correct");
+                        Console.WriteLine("correct");
                     }
                     else
                     {
-                        Console.WriteLine($"you got question {i + 1} wrong");
+                        Console.WriteLine("wrong");
                     }
                     if (i == 0 && playerAwnser[i] == 1)
                     {
@@ -137,8 +132,10 @@ namespace GP_quiz_Kevin
                     }
 
                 }
+                // cheaks the score
 
                 float finalScore = Score / questionTotal * 100;
+
                 Console.WriteLine($"your fianl score is {finalScore}%");
                 if (finalScore == 0)
                 {
