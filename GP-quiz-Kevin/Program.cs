@@ -43,46 +43,46 @@ namespace GP_quiz_Kevin
             awnser4.Add("4: all of the above");
             correctAwnser.Add(4);
             //question 4
-            questions.Add("what does == do?");
-            awnser1.Add("1: change a veriable to the same value");
-            awnser2.Add("2: cheak if the letters in a string match a number");
-            awnser3.Add("3: make an int the number of litters in a string");
-            awnser4.Add("4: cheak if the value is the same as another");
+            questions.Add("which of the following is not a use for Time.deltatime");
+            awnser1.Add("1: timers");
+            awnser2.Add("2: movement");
+            awnser3.Add("3: gravity");
+            awnser4.Add("4: triggers");
             correctAwnser.Add(4);
             //question 5
-            questions.Add("in mario galaxy there is an thing that goes unused\nbut that every level calls on when loaded\nmaking the game crash if it's removed\n what was that item");
+            questions.Add("in mario galaxy there is something that goes unused\nbut that every level calls on when loaded\nmaking the game crash if it's removed\n what was that thing");
             awnser1.Add("1: super mushroom");
             awnser2.Add("2: F,L,U,D,D");
             awnser3.Add("3: waluigi");
             awnser4.Add("4: a yoshi egg");
             correctAwnser.Add(1);
             //question 6
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
+            questions.Add("what does ++ do");
+            awnser1.Add("1: add 1");
+            awnser2.Add("2: add whatever number is placed after");
+            awnser3.Add("3: make a negitve number positive");
+            awnser4.Add("4: add 10");
             correctAwnser.Add(1);
             //question 7
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
+            questions.Add("what's wrong with the fallowing line of code\n vector3.position.y = 5");
+            awnser1.Add("1: should have used +=");
+            awnser2.Add("2: you can't directly edit a single vector 3 value");
+            awnser3.Add("3: trying to enter an int as a vector 3");
+            awnser4.Add("4: it needs to be a float value to work");
             correctAwnser.Add(2);
             //question 8
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
-            correctAwnser.Add(1);
+            questions.Add("which of the fallowing is not a console color");
+            awnser1.Add("1: red");
+            awnser2.Add("2: blue");
+            awnser3.Add("3: pruple");
+            awnser4.Add("4: black");
+            correctAwnser.Add(3);
             //question 9
-            questions.Add("");
-            awnser1.Add("1: ");
-            awnser2.Add("2: ");
-            awnser3.Add("3: ");
-            awnser4.Add("4: ");
+            questions.Add("which of the following will make this list made ouside a method work\nList<int> numbers =");
+            awnser1.Add("1: add \"static\" before that line");
+            awnser2.Add("2: add this after the =: new list<int>();");
+            awnser3.Add("3: neither");
+            awnser4.Add("4: both");
             correctAwnser.Add(4);
             //question 10
             questions.Add("game math gave me a new nemesis, what is it:");
@@ -99,6 +99,7 @@ namespace GP_quiz_Kevin
 
             while (playing)
             {
+                Console.Clear();
                 Console.WriteLine("enter your name");
                 string name = Console.ReadLine();
                 //runs quiz
@@ -112,7 +113,7 @@ namespace GP_quiz_Kevin
                     Console.WriteLine(awnser4[i]);
 
                     awnser();
-                    Console.Clear();
+                    
                     if (playerAwnser[i] == correctAwnser[i])
                     {
                         Score++;
@@ -130,7 +131,9 @@ namespace GP_quiz_Kevin
                     {
                         Console.WriteLine("no the house phone was my old nemesis");
                     }
-
+                    Console.WriteLine("hit enter to Continue");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 // cheaks the score
 
@@ -153,7 +156,7 @@ namespace GP_quiz_Kevin
                     string con = Console.ReadLine();
                     if (con == "Y")
                     {
-
+                        
                         Continue = false;
                     }
                     else if (con == "y")
